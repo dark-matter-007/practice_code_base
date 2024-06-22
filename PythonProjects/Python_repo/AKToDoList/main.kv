@@ -1,0 +1,180 @@
+<loginDlayout>:
+    id: Dlayout
+    orientation: "vertical"
+    size_hint_y: None
+    height: "145dp"
+
+    MDTextField:
+        hint_text: "Username"
+        size_hint_x: .70
+        pos_hint: {'x': 0.1,'center_y': 1}
+        height: "20dp"
+        id: unameinput
+        
+    MDTextField:
+        hint_text: "Password"
+        password: True
+        size_hint_x: .70
+        pos_hint: {'x': 0.1,'center_y': 0.7}
+        size_hint_y: None
+        height: "20dp"
+        id: pswdinput
+    
+    BoxLayout:
+        orientation: 'horizontal'
+        pos_hint: {'x': 0.1,'center_y': 0.3}
+        size_hint_y: None
+        height: "25dp"
+        padding_y: "0dp", "100dp"
+
+        MDCheckbox:
+            state: "normal"
+            size_hint_x: .1
+            size_hint_y: None
+            height: "10dp"
+            pos_hint: {'x': 0,'center_y': 0.6}
+            id: keepmelogin
+
+        MDLabel:
+            text: "remember me"
+            pos_hint: {'x': 0.1,'center_y': 0.6}
+            size_hint_x: .8
+            size_hint_y: 1
+            padding: "0dp", "20dp",
+            color: 0.4 , 0.4 , 0.4 , 1
+
+<yesloginlayout>:
+    size_hint_y: None
+    height: "60dp"
+    MDLabel: 
+        id: user
+        text: "Welcome Back"
+        height: "40dp"
+        opacity: 0
+
+<NewTaskLayout>:
+    size_hint_y: None
+    height: "45dp"
+    MDTextField:
+        id: taskfield
+        hint_text: "Task"
+        size_hint_x: 0.8
+    MDIconButton:
+        icon: "calendar"
+        on_release: app.show_DP()
+    MDIconButton:
+        icon: "clock-outline"
+        on_release: app.show_TP()
+    MDIconButton:
+        icon: "send-circle"
+        on_release: app.include_task(taskfield._get_text())
+
+<Mainscreen>:
+    background_color: "pink"
+    md_bg_color: [1, .6, .6, 1]
+
+    Image:
+        source: "Gradient1.jpg"
+        allow_stretch: True
+        keep_ratio: False
+        size: root.size
+
+    MDLabel:
+        id: Name
+        halign: "center"
+        text: "AK Sharma\nPrograms"
+        color: [1,1,1,0]
+        font_size: 1
+        pos_hint: {'center_x': 0.5,'center_y': 0.5}
+
+        
+<Secscreen>:
+
+    Image:
+        source: "BG2.png"
+        allow_stretch: True
+        keep_ratio: False
+        size: root.size
+
+    GridLayout:
+        rows: 3
+        cols: 1
+        MDTopAppBar:
+            id : namebar
+            elevation: 0
+            md_bg_color: [1,1,1,0.01]
+            canvas:
+                Color:
+                    rgba: [.9, .9, 1, .5]
+                RoundedRectangle:
+                    radius: [0, 0, 30, 30]
+                    size: self.size[0], self.size[1]*1.6
+                    pos:self.pos
+            
+            MDBoxLayout:
+                orientation: 'horizontal'
+
+                MDLabel:
+                    text: "  Tasks - "
+                    id : namebartext
+                    color: [.1,.1,.1,1]
+                    size_hint_x: 0.8
+                    font_size: 45
+                    pos_hint: {"y": 0.5}
+
+        MDScrollView:
+            MDList:
+                id: tasklist
+
+                OneLineIconListItem:
+                    text: "My item"
+
+
+        MDTopAppBar:
+            md_bg_color: [1,1,1,0.01]
+            elevation: 0
+
+            canvas.before:
+                Color:
+                    rgba: [.9,.9,1,.2]
+                RoundedRectangle:
+                    radius: [10,10,0, 0]
+                    size: self.size
+                    pos: self.pos
+
+            MDBoxLayout:
+                size: self.size
+                size_hint_y: None
+                height: "55dp"
+                size_hint_x: None 
+                width: "100dp"
+                pos_hint: {"right": 0.95, "center_y" : 10}
+
+                canvas.before:
+                    Color:
+                        rgba: [.9,.9,1,.4]
+                    RoundedRectangle:
+                        radius: [10,10,10,10]
+                        size: self.size
+                        pos: self.pos
+
+                Widget:
+
+                MDIconButton:
+                    icon: "trash-can"
+                    color: [1,1,1,1]
+                    foreground_color: [1,1,1,1]
+                    pos_hint: {"right": 1}
+                    size_hint: None, None
+                    size: "100dp", "100dp"
+                    size_hint_y: None
+                    height: "50dp"
+                    font_size: 45
+
+                MDIconButton:
+                    icon: "plus-box"
+                    pos_hint: {"right": 1}
+                    size_hint: None, None
+                    size: "48dp", "48dp"
+                    font_size: 45
+                    on_release: app.add_task()

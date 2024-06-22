@@ -1,0 +1,4 @@
+{
+    "dotnet.defaultSolution": "CSharpConsole.sln",
+    "cmake.configureOnOpen": false
+}

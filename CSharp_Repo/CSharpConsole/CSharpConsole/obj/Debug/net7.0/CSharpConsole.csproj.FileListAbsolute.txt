@@ -1,0 +1,14 @@
+c:\Users\ashwi\Software_Repo\CSharp Projects\CSharpConsole\CSharpConsole\bin\Debug\net7.0\CSharpConsole.exe
+c:\Users\ashwi\Software_Repo\CSharp Projects\CSharpConsole\CSharpConsole\bin\Debug\net7.0\CSharpConsole.deps.json
+c:\Users\ashwi\Software_Repo\CSharp Projects\CSharpConsole\CSharpConsole\bin\Debug\net7.0\CSharpConsole.runtimeconfig.json
+c:\Users\ashwi\Software_Repo\CSharp Projects\CSharpConsole\CSharpConsole\bin\Debug\net7.0\CSharpConsole.dll
+c:\Users\ashwi\Software_Repo\CSharp Projects\CSharpConsole\CSharpConsole\bin\Debug\net7.0\CSharpConsole.pdb
+c:\Users\ashwi\Software_Repo\CSharp Projects\CSharpConsole\CSharpConsole\obj\Debug\net7.0\CSharpConsole.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\ashwi\Software_Repo\CSharp Projects\CSharpConsole\CSharpConsole\obj\Debug\net7.0\CSharpConsole.AssemblyInfoInputs.cache
+c:\Users\ashwi\Software_Repo\CSharp Projects\CSharpConsole\CSharpConsole\obj\Debug\net7.0\CSharpConsole.AssemblyInfo.cs
+c:\Users\ashwi\Software_Repo\CSharp Projects\CSharpConsole\CSharpConsole\obj\Debug\net7.0\CSharpConsole.csproj.CoreCompileInputs.cache
+c:\Users\ashwi\Software_Repo\CSharp Projects\CSharpConsole\CSharpConsole\obj\Debug\net7.0\CSharpConsole.dll
+c:\Users\ashwi\Software_Repo\CSharp Projects\CSharpConsole\CSharpConsole\obj\Debug\net7.0\refint\CSharpConsole.dll
+c:\Users\ashwi\Software_Repo\CSharp Projects\CSharpConsole\CSharpConsole\obj\Debug\net7.0\CSharpConsole.pdb
+c:\Users\ashwi\Software_Repo\CSharp Projects\CSharpConsole\CSharpConsole\obj\Debug\net7.0\CSharpConsole.genruntimeconfig.cache
+c:\Users\ashwi\Software_Repo\CSharp Projects\CSharpConsole\CSharpConsole\obj\Debug\net7.0\ref\CSharpConsole.dll

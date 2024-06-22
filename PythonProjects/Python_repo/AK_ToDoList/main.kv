@@ -1,0 +1,77 @@
+<DisplayScreen>:
+    MDGridLayout:
+        rows: 3
+        cols: 1
+
+        MDTopAppBar:
+            row: 1
+            title: "AK_To_Do"
+            md_bg_color: "#333333"
+            right_action_items: [["plus", lambda x: app.add_task(), "Add new task"]]
+       
+        MDTextField: 
+            col: 1
+            row: 2
+            id: searchtaskfield
+            mode: "fill"
+            foreground_color: 1,1,1,1
+            color: 1,1,1,1
+            hint_text: "Search Task"
+            on_text_validate: app.searchtask()
+            adaptive_height: True
+
+        MDScrollView:
+            padding: 5
+            row: 3
+
+            MDBoxLayout:
+                orientation: 'horizontal'
+                adaptive_height: True
+           
+                MDList:
+                    id: task_list
+                    size_hint_x: 0.9
+
+                MDList:
+                    id: check_list 
+                    size_hint_x: 0.1
+                    size_hint_y: 1
+                    pos_hint: {'center_x': 0.5,'center_y': 0.5}
+                        
+
+<LoginScreen>:
+
+    MDBoxLayout:
+        orientation: 'vertical'
+        pos_hint: {'center_x' : 0.5, 'center_y': 0.5}
+        size_hint_x: 1
+        size_hint_y: 0.3
+
+        MDLabel:
+            text: "Login"
+            halign: "center"
+            font_size: 40
+
+        MDTextField:
+            mode: "rectangle"
+            hint_text: "Username"
+            size_hint_y: 0.01
+            size_hint_x: 0.6
+            pos_hint: {'center_x' : 0.5, 'center_y' : 0.2}
+
+        MDTextField:
+            mode: "rectangle"
+            hint_text: "Password"
+            password: True
+            size_hint_y: 0.01
+            size_hint_x: 0.6
+            pos_hint: {'center_x' : 0.5, 'center_y' : 0.4}
+
+        MDRectangleFlatButton:
+            padding: ('10dp', '10dp', '10dp', '10dp')
+            pad_y: 10
+            text: "Login"
+            size_hint_y: 0.01
+            size_hint_x: 0.6
+            pos_hint: {'center_x' : 0.5, 'center_y' : 0.6}
+            on_release: app.enter_display()

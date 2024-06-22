@@ -1,0 +1,40 @@
+
+<MainScreen>:
+
+    BoxLayout:
+        orientation: 'vertical'
+        
+        Accordion:
+            orientation: 'vertical'
+
+            AccordionItem:
+                title: "Settings"
+                Label:
+                    text:'Accordion phase 2'
+                Label:
+                    text:'Accordion phase 2'
+
+            AccordionItem:
+                title: "Notes"
+                
+                Accordion:
+                    orientation: 'horizontal'
+
+                    AccordionItem:
+                        title: "To-Do"
+                        Label:
+                            text: "To - do elements here"
+                    AccordionItem:
+                        title: "Headless"
+                        Label:
+                            text: "Headless elements here"
+                    AccordionItem:
+                        title: "Titled"
+                        Label:
+                            text: "Titled elements here"
+
+                            
+        Button:
+            text:'Close'
+            size_hint: 1, .1
+            on_press: quit()

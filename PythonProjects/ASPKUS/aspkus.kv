@@ -1,0 +1,570 @@
+<MDTextField>:
+    mode: "fill"
+    background_color: "#282828"
+    padding: 5
+    cursor_color: "white"
+    foreground_color: "#ffffff"
+
+<Mainscreen>:
+
+    BoxLayout:
+        orientation: 'vertical'
+
+        Label:
+            text: "ASP Compose"
+            font_size: 25
+            bold: True
+            size_hint_max_y: 60
+            md_bg_color: "#333333"
+
+        BoxLayout:
+            orientation: 'horizontal'
+
+            Button:
+                text: 'Send Mail'
+                background_color: "#aaaaff"
+                on_release: app.mgr.current = 'SendMailScr1';  app.window.size = (500, 300)
+
+            Button:
+                text: 'Mass Send'
+                background_color: "#aaffcc"
+                on_release: app.mgr.current = 'MassSendScr';  app.window.size = (500, 300)
+
+        BoxLayout:
+            orientation: 'horizontal'
+            
+            Button:
+                text: 'Manage Mails'
+                background_color: "#ffaaaa"
+                on_release: app.openMembers()
+
+            Button:
+                text: 'Manage Phones'
+                background_color: "#ffaaaa"
+                on_release: app.mgr.current = "PhoneMemberscr"
+
+        Button:
+            text: "Tweaks"
+            size_hint_max_y: 50
+            background_color: "#999999"
+            on_release: app.mgr.current = "TweaksScr"
+<Sendmailscreen1>:
+    Accordion:
+        orientation: 'horizontal'
+
+        AccordionItem:
+            title: "Manual"
+
+            MDBoxLayout:
+                orientation: "vertical"
+
+                MDTextField:
+                    id: customMailContentInput
+                    hint_text: "Your raw mail content here"
+                    multiline: True
+                    size_hint_y: 1
+
+                BoxLayout:
+                    orientation: 'horizontal'
+                    size_hint_x: 1
+                    size_hint_y: 0.3
+                    spacing: 10
+                    padding: 10
+
+                    MDFillRoundFlatIconButton:
+                        text: "cancel"
+                        icon: "trash-can"
+                        on_release: app.mgr.current = 'Mainscr'; app.window.size = (400, 350)
+                        md_bg_color: "#ff4444"
+                        size_hint_x: 1
+
+                    MDFillRoundFlatIconButton:
+                        text: "send"
+                        icon: 'send'
+                        size_hint_x: 1
+                        on_release: app.sendCustomMail()
+
+        AccordionItem:
+            title: "Update"
+
+            BoxLayout:
+                orientation: 'vertical'
+                spacing: '5dp'
+
+                BoxLayout:
+                    orientation: 'horizontal'
+                    size_hint_y: 0.8
+                    padding: 10
+                    
+                    Label:
+                        text: "Send for >>"
+
+                    MDFlatButton:
+                        id: UpdateAppOrToolSelector
+                        text: 'App'
+                        padding: 10
+                        md_bg_color: "#333333"
+                        on_release: app.switchUpdateAppOrToolSelectorText(AppOrToolSelector, AppOrToolSelector.text);
+
+                MDTextField:
+                    hint_text: "App Name"
+                    id: nameUpdateInput
+                    size_hint_y: 1
+
+
+                MDTextField:
+                    id: versionUpdateInput
+                    hint_text: "Version"
+                    size_hint_y: 1
+
+                
+                MDTextField:
+                    id: featuresUpdateInput
+                    mode: "fill"
+                    background_color: "#282828"
+                    padding: 5
+                    multiline: True
+                    size_hint_y: 2
+                    foreground_color: "#ffffff"
+                    cursor_color: "white"
+                    hint_text: "New Features"
+
+                BoxLayout:
+                    orientation: 'horizontal'
+                    size_hint_x: 1
+                    spacing: 10
+                    padding: 10
+
+                    MDFillRoundFlatIconButton:
+                        text: "cancel"
+                        icon: "trash-can"
+                        on_release: app.mgr.current = 'Mainscr'; app.window.size = (400, 350)
+                        md_bg_color: "#ff4444"
+                        size_hint_x: 1
+
+                    MDFillRoundFlatIconButton:
+                        text: "send"
+                        icon: 'send'
+                        size_hint_x: 1
+                        on_release: app.sendNewUpdateMail()
+
+        AccordionItem:
+            title: "New Release"
+
+            BoxLayout:
+                orientation: 'vertical'
+                spacing: '5dp'
+
+                BoxLayout:
+                    orientation: 'horizontal'
+                    size_hint_y: 0.8
+                    padding: 10
+                    
+                    Label:
+                        text: "Send for >>"
+
+                    MDFlatButton:
+                        id: AppOrToolSelector
+                        text: 'App'
+                        padding: 10
+                        md_bg_color: "#333333"
+                        on_release: app.switchAppOrToolSelectorText(AppOrToolSelector, AppOrToolSelector.text);
+
+                MDTextField:
+                    hint_text: "App Name"
+                    id: nameInput
+                    size_hint_y: 1
+
+
+                MDTextField:
+                    id: descriptionInput
+                    hint_text: "Description"
+                    size_hint_y: 1
+
+                
+                MDTextField:
+                    id: featuresInput
+                    mode: "fill"
+                    background_color: "#282828"
+                    padding: 5
+                    multiline: True
+                    size_hint_y: 2
+                    foreground_color: "#ffffff"
+                    cursor_color: "white"
+                    hint_text: "Features in separate lines"
+
+                BoxLayout:
+                    orientation: 'horizontal'
+                    size_hint_x: 1
+                    spacing: 10
+                    padding: 10
+
+                    MDFillRoundFlatIconButton:
+                        text: "cancel"
+                        icon: "trash-can"
+                        on_release: app.mgr.current = 'Mainscr'; app.window.size = (400, 350)
+                        md_bg_color: "#ff4444"
+                        size_hint_x: 1
+
+                    MDFillRoundFlatIconButton:
+                        text: "send"
+                        icon: 'send'
+                        size_hint_x: 1
+                        on_release: app.sendNewReleaseMail()
+
+
+<MassSendScreen>:
+    Accordion:
+        orientation: 'horizontal'
+
+        AccordionItem:
+            title: "Manual"
+
+            MDBoxLayout:
+                orientation: "vertical"
+
+                MDTextField:
+                    id: customMailContentInput
+                    hint_text: "Your raw mail content here"
+                    multiline: True
+                    size_hint_y: 1
+
+                BoxLayout:
+                    orientation: 'horizontal'
+                    size_hint_x: 1
+                    size_hint_y: 0.3
+                    spacing: 10
+                    padding: 10
+
+                    MDFillRoundFlatIconButton:
+                        text: "cancel"
+                        icon: "trash-can"
+                        on_release: app.mgr.current = 'Mainscr'; app.window.size = (400, 350)
+                        md_bg_color: "#ff4444"
+                        size_hint_x: 1
+
+                    MDFillRoundFlatIconButton:
+                        text: "mass send"
+                        icon: 'send'
+                        size_hint_x: 1
+                        on_release: app.massSendCustom()
+
+        AccordionItem:
+            title: "Update"
+
+            BoxLayout:
+                orientation: 'vertical'
+                spacing: '5dp'
+
+                BoxLayout:
+                    orientation: 'horizontal'
+                    size_hint_y: 0.8
+                    padding: 10
+                    
+                    Label:
+                        text: "Send for >>"
+
+                    MDFlatButton:
+                        id: UpdateAppOrToolSelector
+                        text: 'App'
+                        padding: 10
+                        md_bg_color: "#333333"
+                        on_release: app.switchUpdateAppOrToolSelectorText(AppOrToolSelector, AppOrToolSelector.text);
+
+                MDTextField:
+                    hint_text: "App Name"
+                    id: nameUpdateInput
+                    size_hint_y: 1
+
+
+                MDTextField:
+                    id: versionUpdateInput
+                    hint_text: "Version"
+                    size_hint_y: 1
+
+                
+                MDTextField:
+                    id: featuresUpdateInput
+                    mode: "fill"
+                    background_color: "#282828"
+                    padding: 5
+                    multiline: True
+                    size_hint_y: 2
+                    foreground_color: "#ffffff"
+                    cursor_color: "white"
+                    hint_text: "New Features"
+
+                BoxLayout:
+                    orientation: 'horizontal'
+                    size_hint_x: 1
+                    spacing: 10
+                    padding: 10
+
+                    MDFillRoundFlatIconButton:
+                        text: "cancel"
+                        icon: "trash-can"
+                        on_release: app.mgr.current = 'Mainscr'; app.window.size = (400, 350)
+                        md_bg_color: "#ff4444"
+                        size_hint_x: 1
+
+                    MDFillRoundFlatIconButton:
+                        text: "mass send"
+                        icon: 'send'
+                        size_hint_x: 1
+                        on_release: app.massSendNewUpdate()
+
+        
+        AccordionItem:
+            title: "New Release"
+
+            BoxLayout:
+                orientation: 'vertical'
+                spacing: '5dp'
+
+                BoxLayout:
+                    orientation: 'horizontal'
+                    size_hint_y: 0.8
+                    padding: 10
+                    
+                    Label:
+                        text: "Send for >>"
+
+                    MDFlatButton:
+                        id: AppOrToolSelector
+                        text: 'App'
+                        padding: 10
+                        md_bg_color: "#333333"
+                        on_release: app.switchAppOrToolSelectorText(AppOrToolSelector, AppOrToolSelector.text);
+
+                MDTextField:
+                    hint_text: "App Name"
+                    id: nameInput
+                    size_hint_y: 1
+
+
+                MDTextField:
+                    id: descriptionInput
+                    hint_text: "Description"
+                    size_hint_y: 1
+
+                
+                MDTextField:
+                    id: featuresInput
+                    mode: "fill"
+                    background_color: "#282828"
+                    padding: 5
+                    multiline: True
+                    size_hint_y: 2
+                    foreground_color: "#ffffff"
+                    cursor_color: "white"
+                    hint_text: "Features in separate lines"
+
+                BoxLayout:
+                    orientation: 'horizontal'
+                    size_hint_x: 1
+                    spacing: 10
+                    padding: 10
+
+                    MDFillRoundFlatIconButton:
+                        text: "cancel"
+                        icon: "trash-can"
+                        on_release: app.mgr.current = 'Mainscr'; app.window.size = (400, 350)
+                        md_bg_color: "#ff4444"
+                        size_hint_x: 1
+
+                    MDFillRoundFlatIconButton:
+                        text: "mass send"
+                        icon: 'send'
+                        size_hint_x: 1
+                        on_release: app.massSendNewRelease()
+
+<Memberscreen>:
+
+    Accordion:
+        orientation: 'horizontal'
+
+        AccordionItem:
+            title: "Edit members"
+            background_color: "#aa00ff"
+
+            BoxLayout:
+                orientation: "vertical"
+            
+                Button:
+                    text: "Home"
+                    size_hint_max_y: 40
+                    on_release: app.mgr.current = "Mainscr"
+
+                TextInput:
+                    id: allMembersTextBox
+                    hint_text: "Members come here\neach member in separate line\nchanges are saved as soon as you leave this screen"
+                    text: open("members.txt", "r").read()
+                    background_color: "#222222"
+                    foreground_color: "#ffffff"
+
+                Button:
+                    text: "Commit Changes"
+                    on_release: open("members.txt", "w").write(allMembersTextBox._get_text()); allMembersTextBox.text =  open("members.txt", "r").read()
+                    size_hint_max_y: 35
+
+
+        AccordionItem:
+            title: "New Member"
+
+            BoxLayout:
+                orientation: 'vertical'
+
+                Button:
+                    text: "Home"
+                    size_hint_max_y: 40
+                    on_release: app.mgr.current = "Mainscr"
+
+                TextInput:
+                    id: newMemberText
+                    hint_text: "new member 1\nnew member 2"
+                    background_color: "#222222"
+                    foreground_color: "#ffffff"
+
+                Button:
+                    text: "Add Member"
+                    on_release: open("members.txt", "a").write(newMemberText._get_text() + "\n"); allMembersTextBox.text =  open("members.txt", "r").read(); newMemberText.text = ""
+                    size_hint_max_y: 35
+
+
+<LoginScreen>:
+    BoxLayout:
+        orientation:'vertical'
+        spacing: 15
+        padding: 15
+
+
+        Label: 
+            text: "Login"
+            size_hint_max_y: 40
+            font_size: 35
+
+        MDTextField:
+            hint_text: "username"
+            text: "ashwinsharma@asp"
+            foreground_color: "#ffffff"
+            background_color: "#222222"
+            cursor_color: "#ffffff"
+            size_hint_y: 1
+            md_bg_color: "#333333"
+
+        MDTextField:
+            id: passwordInput
+            hint_text: "password"
+            foreground_color: "#ffffff"
+            background_color: "#222222"
+            cursor_color: "#ffffff"
+            password: True
+            on_text_validate: app.login()
+            size_hint_y: 1
+            md_bg_color: "#333333"
+
+
+        MDBoxLayout:
+            orientation: 'horizontal'
+            spacing: 10
+
+            MDFillRoundFlatIconButton:
+                text: "Exit"
+                icon: 'exit-run'
+                on_release: exit()
+                md_bg_color: "#883333"
+                pos_hint_x: 0.5
+                size_hint_x: 1
+
+            MDFillRoundFlatIconButton:
+                text: "Login"
+                icon: 'login-variant'
+                on_release: app.login()
+                md_bg_color: "#33aa00"
+                pos_hint_x: 0.5
+                size_hint_x: 1
+
+
+<PhoneMemberScreen>:
+
+    Accordion:
+        orientation: 'horizontal'
+
+        AccordionItem:
+            title: "Edit members"
+            background_color: "#aa00ff"
+
+            BoxLayout:
+                orientation: "vertical"
+            
+                Button:
+                    text: "Home"
+                    size_hint_max_y: 40
+                    on_release: app.mgr.current = "Mainscr"
+
+                TextInput:
+                    id: allPhonemembersTextBox
+                    hint_text: "Members come here\neach member in separate line\nchanges are saved by 'commit changes' "
+                    text: open("Phonemembers.txt", "r").read()
+                    background_color: "#222222"
+                    foreground_color: "#ffffff"
+
+                Button:
+                    text: "Commit Changes"
+                    on_release: open("Phonemembers.txt", "w").write(allPhonemembersTextBox._get_text()); allPhonemembersTextBox.text =  open("Phonemembers.txt", "r").read()
+                    size_hint_max_y: 35
+
+
+        AccordionItem:
+            title: "New Member"
+
+            BoxLayout:
+                orientation: 'vertical'
+
+                Button:
+                    text: "Home"
+                    size_hint_max_y: 40
+                    on_release: app.mgr.current = "Mainscr"
+
+                TextInput:
+                    id: newPhoneMemberText
+                    hint_text: "new member 1\nnew member 2"
+                    background_color: "#222222"
+                    foreground_color: "#ffffff"
+
+                Button:
+                    text: "Add Member"
+                    on_release: open("Phonemembers.txt", "a").write(newPhoneMemberText._get_text() + "\n"); allPhonemembersTextBox.text =  open("Phonemembers.txt", "r").read(); newPhoneMemberText.text = ""
+                    size_hint_max_y: 35
+
+<TweaksScreen> :
+    BoxLayout:
+        orientation: "vertical"
+        spacing: 10
+        padding: 10
+
+        Label: 
+            text: "Tweaks apply on this section only"
+            size_hint_max_y: 50
+
+        MDTextField:
+            id: secondsToWait
+            hint_text: "Wait this seconds for whatsapp loading..."
+
+        BoxLayout:
+            orientation:'horizontal'
+            spacing: 10
+
+            MDFillRoundFlatIconButton:
+                text: "cancel"
+                icon: "trash-can-outline"
+                md_bg_color: "#553333"
+                size_hint_x: 1
+                on_release: app.mgr.current = "Mainscr"
+
+            MDFillRoundFlatIconButton:
+                text: "save"
+                icon: "content-save"
+                md_bg_color: "#55aa77"
+                size_hint_x: 1
+                on_release: app.saveTweaks(); app.mgr.current = "Mainscr"

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "946241993758",
+    "firebase_url": "https://notebird-base-default-rtdb.firebaseio.com",
+    "project_id": "notebird-base",
+    "storage_bucket": "notebird-base.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:946241993758:android:e6d29d51e9a039052b820f",
+        "android_client_info": {
+          "package_name": "com.asprograms.notebird"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "946241993758-53imecqlgov7ij1usg3ad0bfm5va793d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzpX9HG0NUmFou6JSYGfc1wNQkS9Im_9w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "946241993758-53imecqlgov7ij1usg3ad0bfm5va793d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,163 @@
+
+<OneLineListItem>:
+    foreground_color: "white"
+    halign: "center"
+    deselected_color: "black"
+
+<Headscreen>:
+
+    MDGridLayout:
+        cols: 1
+        rows: 5
+
+        MDTopAppBar:
+            title: "AK Notes 2 : Early access"
+            left_action_items: [["alpha-a-box", None, "Ashwin Sharma"]]
+            md_bg_color: "#202020"
+
+        MDBottomNavigation:
+
+            MDBottomNavigationItem:
+                name: "screen 1"
+                icon: "magnify"
+                text: "All Notes"
+
+
+                MDGridLayout:
+                    rows: 2
+                    cols:1
+                    padding: '10px'
+
+                    MDGridLayout:
+                        adaptive_height: True
+                        id: All_GL
+                        cols: 2
+                        MDTextField:
+                            col: 1
+                            row: 1
+                            id: searchnotefield
+                            foreground_color: 1,1,1,1
+                            color: 1,1,1,1
+                            hint_text: "Search"
+                            on_text_validate: app.searchnote()
+
+                        MDIconButton:
+                            col: 2
+                            row: 1
+                            background_color: "black"
+                            icon: "magnify"
+                            on_release: app.searchnote()
+
+                    MDScrollView:
+                        padding: 5
+
+                        MDList:
+                            id: All_LST
+
+            MDBottomNavigationItem:
+                name: "screen 3"
+                text: "New"
+                icon: "plus"
+
+                MDBoxLayout:
+                    orientation: "vertical"
+                    pos_hint: {'center_x': 0.5,'center_y': 0.9}
+
+                    MDTextField:
+                        id: NewNTopic
+                        hint_text: "Your new note's topic..."
+                        md_bg_color: "#aa5555"
+                        pos_hint: {'center_x': 0.5,'center_y': 0.4}
+                        adaptive_height: True
+                        size_hint: 0.5, None
+                        font_size: 25
+
+
+                    MDIconButton:
+                        icon: "arrow-right-box"
+                        color: "#aa5555"
+                        pos_hint: {'center_x': 0.5,'center_y': 0.5}
+                        size_hint: 0.3, None
+                        on_release: text = NewNTopic._get_text(); app.newnote(text)
+
+
+
+<Newscreen>:
+    MDGridLayout:
+        cols: 1
+        rows: 6
+
+        MDTopAppBar:
+            id: TAB_ES
+            md_bg_color: "#6655aa"
+            title: "New Note"
+            background_color: "#aa00ff"
+            row:1
+
+        MDTextFieldRect:
+            hint_text: "Your note here"
+            id: NTextBox
+            size_hint: 3,3
+            row: 2
+
+        MDBoxLayout:
+            orientation: 'horizontal'
+            adaptive_height: True
+            MDIconButton:
+                icon: "delete"
+                on_release: app.NDel()
+                size_hint: 0.3, None
+
+            MDIconButton:
+                icon: "content-save"
+                on_release: app.N_save_file()
+                size_hint: 0.3, None
+
+            MDIconButton:
+                icon: "home"
+                on_release: app.return_to_home()
+                size_hint: 0.3, None
+
+<MDTextFieldRect>:
+    background_color: "#222222"
+    cursor_color: "white"
+    foreground_color: "#aaaaff"
+    selected_color: "purple"
+
+<Editorscreen>:
+    MDGridLayout:
+        cols: 1
+        rows: 6
+
+        MDTopAppBar:
+            id: TAB_ES
+            md_bg_color: "#6655aa"
+            title: "EditorScreen"
+            background_color: "#aa00ff"
+            row:1
+
+        MDTextFieldRect:
+            hint_text: "Your note here"
+            id: TextBox
+            size_hint: 3,3
+            row: 2
+
+        MDBoxLayout:
+            orientation: 'horizontal'
+            size_hint: 1, None
+            adaptive_height: True
+
+            MDIconButton:
+                icon: "delete"
+                on_release: app.Del()
+                size_hint: 0.3, None
+
+            MDIconButton:
+                icon: "content-save"
+                on_release: app.save_file()
+                size_hint: 0.3, None
+
+            MDIconButton:
+                icon: "magnify"
+                on_release: app.return_to_home()
+                size_hint: 0.3, None

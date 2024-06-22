@@ -1,0 +1,14 @@
+c:\Users\ashwi\Software_Repo\CSharp Projects\Practice App 2\Practice App 2\bin\Debug\net7.0\Practice App 2.exe
+c:\Users\ashwi\Software_Repo\CSharp Projects\Practice App 2\Practice App 2\bin\Debug\net7.0\Practice App 2.deps.json
+c:\Users\ashwi\Software_Repo\CSharp Projects\Practice App 2\Practice App 2\bin\Debug\net7.0\Practice App 2.runtimeconfig.json
+c:\Users\ashwi\Software_Repo\CSharp Projects\Practice App 2\Practice App 2\bin\Debug\net7.0\Practice App 2.dll
+c:\Users\ashwi\Software_Repo\CSharp Projects\Practice App 2\Practice App 2\bin\Debug\net7.0\Practice App 2.pdb
+c:\Users\ashwi\Software_Repo\CSharp Projects\Practice App 2\Practice App 2\obj\Debug\net7.0\Practice App 2.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\ashwi\Software_Repo\CSharp Projects\Practice App 2\Practice App 2\obj\Debug\net7.0\Practice App 2.AssemblyInfoInputs.cache
+c:\Users\ashwi\Software_Repo\CSharp Projects\Practice App 2\Practice App 2\obj\Debug\net7.0\Practice App 2.AssemblyInfo.cs
+c:\Users\ashwi\Software_Repo\CSharp Projects\Practice App 2\Practice App 2\obj\Debug\net7.0\Practice App 2.csproj.CoreCompileInputs.cache
+c:\Users\ashwi\Software_Repo\CSharp Projects\Practice App 2\Practice App 2\obj\Debug\net7.0\Practice App 2.dll
+c:\Users\ashwi\Software_Repo\CSharp Projects\Practice App 2\Practice App 2\obj\Debug\net7.0\refint\Practice App 2.dll
+c:\Users\ashwi\Software_Repo\CSharp Projects\Practice App 2\Practice App 2\obj\Debug\net7.0\Practice App 2.pdb
+c:\Users\ashwi\Software_Repo\CSharp Projects\Practice App 2\Practice App 2\obj\Debug\net7.0\Practice App 2.genruntimeconfig.cache
+c:\Users\ashwi\Software_Repo\CSharp Projects\Practice App 2\Practice App 2\obj\Debug\net7.0\ref\Practice App 2.dll

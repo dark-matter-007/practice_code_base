@@ -1,0 +1,179 @@
+<TextInput> :
+	cursor_color : (0,0,0,1)
+	background_color : (0.2,0.2,0.2,1)
+	foreground_color: (1, 1, 1, 1)
+	halign: "center"
+	valign:  "bottom"
+	text_size : 30
+
+<Accordion> :
+	anim_duration: 0.5
+	anim_func : "in_out_expo"
+
+<AccordionItem> :
+	background_color : (0,0,0,1)
+	foreground_color : (0,0,1,1)
+
+BoxLayout :
+	id : MainL
+	orientation: 'horizontal'
+
+	Accordion :
+		orientation : "horizontal"
+
+		AccordionItem:
+			title : "Cash in"
+
+			Accordion:
+				orientation : "vertical"
+
+				AccordionItem:
+					title : "Custom"
+
+					BoxLayout :
+						orientation : "horizontal"
+
+						BoxLayout :
+							orientation : "vertical"
+
+							TextInput :
+								id: date
+								hint_text : "Date"
+								background_color: (0.4, 0.4, 0.4, 1)
+
+							TextInput:
+								id : From 
+								hint_text : "From"
+								background_color: (0.4, 0.4, 0.4, 1)
+
+							TextInput :
+								id : Amount
+								hint_text : "Amount"
+								background_color: (0.4, 0.4, 0.4, 1)
+
+						Button :
+							text : "Save"
+							on_release : app.cashintodayC()
+							
+
+				AccordionItem :
+					title : "Yesterday"
+					BoxLayout :
+						orientation : "horizontal"
+
+						BoxLayout :
+							orientation : "vertical"
+
+							TextInput:
+								id : YFrom 
+								hint_text : "From"
+								background_color: (0.4, 0.4, 0.4, 1)
+
+							TextInput :
+								id : YAmount
+								hint_text : "Amount"
+								background_color: (0.4, 0.4, 0.4, 1)
+
+						Button :
+							text : "Save"
+							on_release : app.cashinyesterday()
+
+				AccordionItem:
+					title : "Today"
+					BoxLayout :
+						orientation : "horizontal"
+
+						BoxLayout :
+							orientation : "vertical"
+
+							TextInput:
+								id : From 
+								hint_text : "From"
+								background_color: (0.4, 0.4, 0.4, 1)
+
+							TextInput :
+								id : Amount
+								hint_text : "Amount"
+								background_color: (0.4, 0.4, 0.4, 1)
+
+						Button :
+							text : "Save"
+							on_release : app.cashintoday()
+
+
+
+
+		AccordionItem:
+			title : "Cash out"
+			orientation : "horizontal"
+
+			Accordion:
+				orientation : "vertical"
+
+				AccordionItem:
+					title : "Custom"
+
+					BoxLayout :
+						orientation : "horizontal"
+
+						BoxLayout :
+							orientation : "vertical"
+
+							TextInput :
+								hint_text : "Date"
+								background_color: (0.4, 0.4, 0.4, 1)
+
+							TextInput:
+								hint_text : "To"
+								background_color: (0.4, 0.4, 0.4, 1)
+
+							TextInput :
+								hint_text : "Amount"
+								background_color: (0.4, 0.4, 0.4, 1)
+
+						Button :
+							text : "Save"
+						
+				AccordionItem :
+					title : "Yesterday"
+					BoxLayout :
+						orientation : "horizontal"
+
+						BoxLayout :
+							orientation : "vertical"
+
+							TextInput:
+								id : YTo
+								hint_text : "To"
+								background_color: (0.4, 0.4, 0.4, 1)
+
+							TextInput :
+								id : YOAmount
+								hint_text : "Amount"
+								background_color: (0.4, 0.4, 0.4, 1)
+
+						Button :
+							on_release : app.cashoutyesterday()
+							text : "Save"
+
+				AccordionItem:
+					title : "Today"
+					BoxLayout :
+						orientation : "horizontal"
+
+						BoxLayout :
+							orientation : "vertical"
+
+							TextInput:
+								id : TTo
+								hint_text : "To"
+								background_color: (0.4, 0.4, 0.4, 1)
+
+							TextInput :
+								id : TOAmount
+								hint_text : "Amount"
+								background_color: (0.4, 0.4, 0.4, 1)
+
+						Button :
+							on_release : app.cashouttoday()
+							text : "Save"

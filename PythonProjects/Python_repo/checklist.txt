@@ -1,0 +1,3 @@
+task 3:False
+task 2:False
+task 1:True
