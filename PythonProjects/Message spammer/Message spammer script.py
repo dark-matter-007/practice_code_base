@@ -10,6 +10,6 @@ for count in range (3) :
     time.sleep(1)
 while elements.readline() != "" :
     strng = elements.readline()[0:-1]
-    pg.write ( name + ' ek ' + strng + ' hai')
+    pg.write ( f'you are a {strng}' )
     pg.press ('enter')
     time.sleep (0.1)
